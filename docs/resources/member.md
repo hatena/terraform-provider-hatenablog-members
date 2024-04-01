@@ -24,5 +24,5 @@ resource "hatenablog-members_member" "example" {
 
 ### Required
 
-- `role` (String) Role of the blog member.
+- `role` (String) Role of the blog member. Role must be one of 'admin'（管理者）, 'editor'（編集者）, or 'contributor'（寄稿者）.
 - `username` (String) The Hatena ID of the blog member.

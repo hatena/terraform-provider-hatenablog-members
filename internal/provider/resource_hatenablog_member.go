@@ -44,7 +44,7 @@ func (r *BlogMemberResource) Schema(_ context.Context, req resource.SchemaReques
 			},
 			"role": schema.StringAttribute{
 				Required:    true,
-				Description: "Role of the blog member.",
+				Description: "Role of the blog member. Role must be one of 'admin'（管理者）, 'editor'（編集者）, or 'contributor'（寄稿者）.",
 				Validators: []validator.String{
 					stringvalidator.OneOf("admin", "editor", "contributor"),
 				},
