@@ -48,6 +48,7 @@ func (p *blogMemberProvider) Metadata(_ context.Context, _ provider.MetadataRequ
 
 func (p *blogMemberProvider) Schema(_ context.Context, _ provider.SchemaRequest, resp *provider.SchemaResponse) {
 	resp.Schema = schema.Schema{
+		Description: "A terraform provider which allows you to manage the members of a Hatena Blog.",
 		Attributes: map[string]schema.Attribute{
 			"username": schema.StringAttribute{
 				Description: "The Hatena ID of the operator who owns the target blog or has administrative privileges for it.",

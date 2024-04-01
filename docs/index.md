@@ -3,12 +3,12 @@
 page_title: "hatenablog-members Provider"
 subcategory: ""
 description: |-
-  
+  A terraform provider which allows you to manage the members of a Hatena Blog.
 ---
 
 # hatenablog-members Provider
 
-
+A terraform provider which allows you to manage the members of a Hatena Blog.
 
 ## Example Usage
 
