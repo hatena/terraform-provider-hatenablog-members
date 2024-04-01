@@ -14,7 +14,7 @@ description: |-
 
 ```terraform
 resource "hatenablog-members_member" "example" {
-  username = "Furutsuki"
+  username = "hatenablog-tf-test2"
   role = "admin"
 }
 ```
