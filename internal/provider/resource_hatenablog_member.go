@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+	"github.com/hashicorp/terraform-plugin-framework/path"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 	"github.com/hashicorp/terraform-plugin-framework/resource/schema"
 	"github.com/hashicorp/terraform-plugin-framework/schema/validator"
@@ -24,7 +25,8 @@ type memberResourceModel struct {
 
 // ensure that BlogMemberResource satisfies interfaces
 var (
-	_ resource.Resource = &BlogMemberResource{}
+	_ resource.Resource                = &BlogMemberResource{}
+	_ resource.ResourceWithImportState = &BlogMemberResource{}
 )
 
 func NewBlogMemberResource() resource.Resource {
@@ -152,4 +154,8 @@ func (r *BlogMemberResource) Delete(ctx context.Context, req resource.DeleteRequ
 	}
 
 	resp.State.RemoveResource(ctx)
+}
+
+func (r *BlogMemberResource) ImportState(ctx context.Context, req resource.ImportStateRequest, resp *resource.ImportStateResponse) {
+	resource.ImportStatePassthroughID(ctx, path.Root("username"), req, resp)
 }
